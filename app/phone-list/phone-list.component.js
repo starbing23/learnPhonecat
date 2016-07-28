@@ -5,11 +5,11 @@
 angular.module('phoneList').
 	component('phoneList',{
 		templateUrl:"phone-list/phone-list.template.html",
-		controller: function PhoneListController(){
-				this.phones=[
-				{name:"motorola", snippet:"cool",age:1,},
-				{name:"Dell", snippet:"good", age:2,},
-				{name:"Iphone", snippet:"Excellent", age:3,}];
-				this.order="age";
-		},
+		controller: ['$http', function PhoneListController($http){
+				var self=this;
+				$http.get('phones/phones.json').then(function(response){
+					self.phones=response.data;
+				});
+				self.order='age';		
+		}],
 });
