@@ -12,15 +12,13 @@
             </p>
         </div>
         <ul class="phones">
-            <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy: $ctrl.order" class="thumbnail">
-            	<a href="#/phones/{{phone.id}}" class="thumb">
-                	<img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
-                </a>
-                <a href="#/phones/{{phone.id}}">
-                	<span>{{phone.name}}</span>
-                </a>
-                <p>{{phone.snippet}}</p>
-            </li>
+          <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
+            <a href="#!/phones/{{phone.id}}" class="thumb">
+              <img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+            </a>
+            <a href="#!/phones/{{phone.id}}">{{phone.name}}</a>
+            <p>{{phone.snippet}}</p>
+          </li>
         </ul>
     </div>
 </div>
