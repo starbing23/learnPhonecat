@@ -9,10 +9,14 @@ angular.
     controller: ['$http', '$routeParams',
       function PhoneDetailController($http, $routeParams) {
         var self = this;
-
+		self.setImg=function(img){
+			self.mainImageUrl=img;
+		};
         $http.get('phones/' + $routeParams.phoneId + '.json').then(function(response) {
           self.phone = response.data;
+		  self.setImg(self.phone.images[0]);
         });
+		
       }
     ]
   });
