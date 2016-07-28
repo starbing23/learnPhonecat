@@ -7,8 +7,9 @@ angular.module('phoneList').
 		templateUrl:"phone-list/phone-list.template.html",
 		controller: function PhoneListController(){
 				this.phones=[
-				{name:"motorola", snippet:"cool"},
-				{name:"Dell", snippet:"good"},
-				{name:"Iphone", snippet:"Excellent"}];
+				{name:"motorola", snippet:"cool",age:1,},
+				{name:"Dell", snippet:"good", age:2,},
+				{name:"Iphone", snippet:"Excellent", age:3,}];
+				this.order="age";
 		},
 });
